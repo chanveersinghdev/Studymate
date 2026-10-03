@@ -1,0 +1,54 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;background:#0b0c0f;color:#eee}
+.app{height:100vh;display:flex;overflow:hidden;background:#f7f7f5;color:#202124}
+.app.dark{background:#0c0d10;color:#ececf0}
+.sidebar{width:265px;border-right:1px solid #dededb;background:#f0f0ed;padding:18px 14px;display:flex;flex-direction:column;gap:8px}
+.dark .sidebar{background:#111216;border-color:#25262c}
+.brand{display:flex;align-items:center;gap:10px;font-size:16px;padding:4px 8px 18px}
+.logo{width:31px;height:31px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#7c5cff,#b68cff);color:white;box-shadow:0 8px 25px #7658ff35}
+.newchat,.recent,.iconbtn,.attach{border:0;background:transparent;color:inherit;border-radius:11px;cursor:pointer;transition:.2s}
+.newchat{display:flex;gap:9px;align-items:center;padding:11px 12px;background:#fff;border:1px solid #ddd}
+.dark .newchat{background:#191a1f;border-color:#292a31}
+.newchat:hover,.recent:hover,.iconbtn:hover,.attach:hover{background:#e5e5e2}
+.dark .newchat:hover,.dark .recent:hover,.dark .iconbtn:hover,.dark .attach:hover{background:#22232a}
+.navtitle{font-size:10px;letter-spacing:.13em;color:#888;padding:18px 10px 5px}
+.recent{display:flex;align-items:center;gap:9px;text-align:left;padding:10px;color:#707176}
+.dark .recent{color:#aaa}
+.spacer{flex:1}
+.stats{display:flex;flex-direction:column;gap:5px;font-size:11px;color:#888;padding:12px}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+header{height:66px;border-bottom:1px solid #e0e0dd;display:flex;align-items:center;padding:0 24px;gap:14px}
+.dark header{border-color:#25262c}
+.iconbtn{width:38px;height:38px;display:grid;place-items:center}
+.headerTitle{display:flex;flex-direction:column;gap:2px}
+.headerTitle span{font-size:14px;font-weight:650}
+.headerTitle small{font-size:10px;color:#888}
+.status{margin-left:auto;font-size:11px;color:#888;display:flex;gap:7px;align-items:center}
+.status i{width:7px;height:7px;border-radius:50%;background:#63d68b;box-shadow:0 0 10px #63d68b}
+.chat{width:min(900px,100%);margin:auto;flex:1;overflow:auto;padding:50px 26px 160px}
+.row{margin:0 0 32px}
+.row.user{display:flex;justify-content:flex-end}
+.bubble{max-width:760px;line-height:1.7;font-size:15px}
+.userBubble{background:#e8e8e5;border-radius:22px 22px 7px 22px;padding:12px 17px;max-width:650px}
+.dark .userBubble{background:#24252b}
+.bubble h2{font-size:22px;margin:0 0 10px}
+.bubble p{margin:7px 0}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.actions button{display:flex;align-items:center;gap:5px;border:1px solid #d9d9d5;background:#fff;color:#555;border-radius:999px;padding:8px 12px;font-size:12px;cursor:pointer;transition:.2s}
+.dark .actions button{background:#17181d;color:#d4d4d8;border-color:#2d2e35}
+.actions button:hover{border-color:#8b70ff;box-shadow:0 5px 18px #795bff1f}
+.typing{font-size:12px;color:#888;display:flex;gap:5px;align-items:center}
+.typing span{width:5px;height:5px;background:#888;border-radius:50%;animation:b 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes b{50%{transform:translateY(-4px);opacity:.4}}
+.composerWrap{position:fixed;bottom:0;left:265px;right:0;padding:20px 24px 17px;background:linear-gradient(transparent,#f7f7f5 30%)}
+.dark .composerWrap{background:linear-gradient(transparent,#0c0d10 30%)}
+.composer{width:min(850px,100%);margin:auto;display:flex;align-items:flex-end;gap:8px;border:1px solid #d4d4d0;background:#fff;border-radius:25px;padding:9px;box-shadow:0 10px 35px #0000000c;transition:.25s}
+.dark .composer{background:#17181d;border-color:#303138;box-shadow:0 10px 35px #0008}
+.composer:focus-within{border-color:#8b70ff;box-shadow:0 0 0 4px #8b70ff14,0 15px 45px #00000015}
+.composer textarea{flex:1;border:0;outline:0;resize:none;background:transparent;color:inherit;padding:8px;font:inherit;min-height:26px;max-height:120px}
+.attach,.send{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:0;cursor:pointer}
+.send{background:#24242a;color:white;transition:.2s}
+.send:hover{transform:translateY(-2px);box-shadow:0 7px 18px #0003}
+.hint{text-align:center;font-size:9px;color:#888;margin-top:8px}
+@media(max-width:760px){.sidebar{display:none}.composerWrap{left:0}.chat{padding-left:16px;padding-right:16px}header{padding:0 12px}.status{display:none}}
